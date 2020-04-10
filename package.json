@@ -36,6 +36,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^2.0.4",
     "prop-types": "^15.7.2",
+    "systemjs-webpack-interop": "^2.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
