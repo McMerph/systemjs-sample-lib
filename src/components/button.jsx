@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({ children }) => <button type="button">PREFIX{children}</button>
+const Button = ({ children }) => (
+  <button type="button">|UI lib|{children}</button>
+)
 Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string.isRequired,
