@@ -1,6 +1,21 @@
+const fs = require('fs')
 const path = require('path')
 const systemjsInterop = require('systemjs-webpack-interop/webpack-config')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const COMPONENTS = {
+  PATH: path.resolve('src', 'components'),
+  REGEX: /.*\.jsx?$/,
+}
+const entries = fs.readdirSync(COMPONENTS.PATH).reduce(
+  (acc, fileName) => ({
+    ...acc,
+    ...(COMPONENTS.REGEX.test(fileName)
+      ? { [path.parse(fileName).name]: path.resolve(COMPONENTS.PATH, fileName) }
+      : {}),
+  }),
+  {}
+)
 
 module.exports = systemjsInterop.modifyWebpackConfig({
   mode: 'production',
@@ -20,10 +35,9 @@ module.exports = systemjsInterop.modifyWebpackConfig({
       },
     ],
   },
-  entry: path.resolve('src', 'index.js'),
+  entry: entries,
   output: {
     path: path.resolve('dist'),
-    filename: 'bundle.js',
     libraryTarget: 'system',
   },
   devtool: 'source-map',
