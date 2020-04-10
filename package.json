@@ -1,0 +1,42 @@
+{
+  "name": "systemjs-sample-lib",
+  "version": "1.0.0",
+  "description": "UI lib which use SystemJS and Webpack",
+  "main": "dist/ui",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint . --ext .js --ext .jsx",
+    "lint:fix": "eslint . --fix --ext .js --ext .jsx",
+    "format-lint": "npm run format && npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ci": "npm run format:check && npm run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.4",
+    "prop-types": "^15.7.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
