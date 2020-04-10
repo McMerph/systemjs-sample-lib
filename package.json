@@ -1,5 +1,5 @@
 {
-  "name": "systemjs-sample-lib",
+  "name": "@mcmerphy/systemjs-sample-lib",
   "version": "1.0.0",
   "description": "UI lib which use SystemJS and Webpack",
   "main": "dist/ui",
